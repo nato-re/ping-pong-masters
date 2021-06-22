@@ -7,7 +7,7 @@ const getPong = async (message) => {
   const config = {
     data: { ping: message }
   };
-  const result = await axios.get(localUrl, config)
+  const result = await axios.get(deployUrl, config)
     .then(({ data }) => {
       if (data.pong) return data.pong;
       if (data.message) return data.message;
