@@ -1,10 +1,13 @@
 const axios = require('axios');
 
+const deployUrl = 'https://ping-pong-masters.herokuapp.com/ping'
+const localUrl = 'http://localhost:3000/ping'
+
 const getPong = async (message) => {
   const config = {
     data: { ping: message }
   };
-  const result = await axios.get('http://localhost:3000/ping', config)
+  const result = await axios.get(localUrl, config)
     .then(({ data }) => {
       if (data.pong) return data.pong;
       if (data.message) return data.message;
