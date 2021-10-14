@@ -30,12 +30,12 @@ app.get('/ping', (req, res, next) => {
     tryDict[ip] = makeRandomList(100)
     nextNumber = tryDict[ip][0]
   } else {
-    if (tryDict[ip] && tryDict[ip].findIndex((item) => ping === item) < 99) {
-      const pingIndex = tryDict[ip].findIndex((item) => ping === item)
+    if (tryDict[ip] && tryDict[ip].findIndex((item) => ping == item) < 99) {
+      const pingIndex = tryDict[ip].findIndex((item) => ping == item)
       nextNumber = tryDict[ip][pingIndex + 1]
     }
-    else if (tryDict[ip].findIndex((item) => ping === item) === 99) {
-      return res.status(200).json({ message: 'Parabéns Ping Pong Master' })
+    else if (tryDict[ip].findIndex((item) => ping == item) == 99) {
+      return res.status(200).json({ message: 'Parabéns é Mestre do Tênis de Mesa' })
     }
   }
 
