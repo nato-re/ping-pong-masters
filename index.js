@@ -35,7 +35,7 @@ app.get('/ping', (req, res, next) => {
       nextNumber = tryDict[ip][pingIndex + 1]
     }
     else if (tryDict[ip].findIndex((item) => ping == item) == 99) {
-      return res.status(200).json({ message: 'Parabéns é Mestre do Tênis de Mesa' })
+      return res.status(200).json({ message: 'Parabéns cê é Mestre do Tênis de Mesa' })
     }
   }
 
